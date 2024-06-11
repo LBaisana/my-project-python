@@ -24,3 +24,9 @@ for i, df in enumerate(dataframes):
     current_id += len(df)
     # Сохраним обновленный датафрейм обратно в CSV (или любой другой требуемый формат)
     df.to_csv(f'./tablitsa4{i+1}.csv', index=False)
+
+# Проверим, что файлы были созданы
+for i in range(1, len(dataframes) + 1):
+    df = pd.read_csv(f'./tablitsa4{i}.csv')
+    print(f"Содержимое файла tablitsa4{i}.csv:")
+    print(df)
